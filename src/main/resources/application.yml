@@ -1,0 +1,22 @@
+spring:
+  batch:
+    job:
+#      Так Job не будет выполняться при старте приложения (По-умолчанию true)
+      enabled: false
+  datasource:
+    url: jdbc:h2:mem:h2db
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
+      schema-locations: classpath:schema.sql
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      database: library
